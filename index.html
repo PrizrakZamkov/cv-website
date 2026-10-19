@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Станислав Делюков | Unity и фронтенд</title>
+  <meta name="description" content="Unity и фронтенд разработчик. Игры, пиксель-арт и интерфейсы.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-half top"></div>
+    <div class="intro-half bottom"></div>
+    <div class="intro-line"></div>
+  </div>
+
+  <button class="lang" id="lang" type="button" aria-label="Switch language">
+    <span data-lang="ru">RU</span><span data-lang="en">EN</span>
+  </button>
+
+  <main class="wrap" id="app">
+    <header class="hero">
+      <div class="hero-dots" aria-hidden="true"></div>
+      <div class="avatar" id="avatar" aria-hidden="true"></div>
+      <div class="hero-text">
+        <h1 class="name glitch" id="name"></h1>
+        <p class="role" id="role"></p>
+        <p class="tagline" id="tagline"></p>
+        <p class="facts" id="facts"></p>
+        <div class="contacts" id="contacts"></div>
+      </div>
+    </header>
+
+    <section class="block" id="about-block">
+      <h2 class="caption" data-ui="about"></h2>
+      <div class="about" id="about"></div>
+    </section>
+
+    <section class="block">
+      <h2 class="caption" data-ui="skills"></h2>
+      <dl class="skills" id="skills"></dl>
+    </section>
+
+    <section class="block">
+      <h2 class="caption" data-ui="experience"></h2>
+      <ol class="timeline" id="experience"></ol>
+    </section>
+
+    <section class="block">
+      <h2 class="caption" data-ui="projects"></h2>
+      <div class="projects" id="projects"></div>
+    </section>
+
+    <section class="block">
+      <h2 class="caption" data-ui="education"></h2>
+      <div class="edu" id="education"></div>
+    </section>
+
+    <footer class="outro">
+      <p class="outro-title glitch" data-ui="contact"></p>
+      <p class="outro-text" data-ui="contactText"></p>
+      <div class="contacts" id="contacts-bottom"></div>
+    </footer>
+  </main>
+
+  <dialog class="modal" id="modal">
+    <div class="modal-panel" id="modal-panel"></div>
+  </dialog>
+
+  <noscript><p class="noscript">Включите JavaScript, чтобы увидеть страницу</p></noscript>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
