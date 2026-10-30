@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Станислав Делюков — резюме, unity-разработчик</title>
+<!--
+  Резюме на одну страницу.
+  Открыть: двойной клик по этому файлу.
+  Сохранить в PDF: Ctrl+P, принтер «Сохранить как PDF», поля «Нет», фон печатать не нужно.
+  Весь текст правится прямо здесь, ничего больше не требуется.
+-->
+<style>
+  @page { size: A4; margin: 12mm 12mm 10mm; }
+
+  :root {
+    --ink: #14121c;
+    --soft: #5a5570;
+    --rule: #ddd9e8;
+    --accent: #6b3fd4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: #fff;
+    font: 400 10.4pt/1.45 Inter, 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    width: 186mm;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  h1, h2, h3, p { margin: 0; }
+
+  /* шапка */
+  .top { border-bottom: 2px solid var(--accent); padding-bottom: 7pt; margin-bottom: 11pt; }
+
+  .name {
+    font-size: 23pt;
+    font-weight: 700;
+    letter-spacing: -.015em;
+    line-height: 1.05;
+  }
+
+  .role {
+    margin-top: 3pt;
+    font-size: 11.5pt;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .line {
+    margin-top: 5pt;
+    font-size: 9pt;
+    color: var(--soft);
+  }
+
+  .line span { white-space: nowrap; }
+  .line i { font-style: normal; color: var(--rule); padding: 0 5pt; }
+
+  /* две колонки, без flex и grid: так же печатается и в старых движках */
+  .cols { width: 100%; }
+  .cols::after { content: ''; display: block; clear: both; }
+
+  .main { float: left; width: 120mm; }
+  .side { float: right; width: 58mm; }
+
+  h2 {
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 2.5pt;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 6pt;
+  }
+
+  .block { margin-bottom: 13pt; }
+
+  .item { margin-bottom: 10pt; }
+  .item:last-child { margin-bottom: 0; }
+
+  .item-top { }
+
+  .item h3 {
+    font-size: 10.5pt;
+    font-weight: 650;
+    line-height: 1.25;
+  }
+
+  .where {
+    font-size: 9.2pt;
+    color: var(--soft);
+    margin-top: 1.5pt;
+  }
+
+  .when {
+    float: right;
+    font-size: 8.5pt;
+    color: var(--soft);
+    font-weight: 500;
+    padding-left: 6pt;
+  }
+
+  ul { margin: 4pt 0 0; padding: 0; list-style: none; }
+
+  li {
+    position: relative;
+    padding-left: 10pt;
+    margin-bottom: 2pt;
+    font-size: 9.5pt;
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 1pt;
+    top: 5pt;
+    width: 3pt;
+    height: 3pt;
+    background: var(--accent);
+  }
+
+  .stack {
+    margin-top: 3pt;
+    font-size: 8.5pt;
+    color: var(--soft);
+  }
+
+  .lead { font-size: 9.7pt; }
+
+  /* проекты */
+  .proj { margin-bottom: 7.5pt; font-size: 9.5pt; }
+  .proj:last-child { margin-bottom: 0; }
+  .proj b { font-weight: 650; }
+  .proj .url { color: var(--accent); font-size: 8.5pt; }
+
+  /* боковая колонка */
+  .side .block { margin-bottom: 12pt; }
+
+  .skill { margin-bottom: 6pt; font-size: 9pt; }
+  .skill:last-child { margin-bottom: 0; }
+  .skill b { display: block; font-weight: 650; font-size: 8.5pt; }
+  .skill span { color: var(--soft); }
+
+  .edu { font-size: 9pt; }
+  .edu b { font-weight: 650; }
+  .edu p { margin: 1pt 0 0; color: var(--soft); }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header class="top">
+    <h1 class="name">Станислав Делюков</h1>
+    <p class="role">Unity-разработчик</p>
+    <p class="line">
+      <span>Иннополис, Россия</span><i>•</i><span><a href="mailto:s.delyukov@innopolis.university">s.delyukov@innopolis.university</a></span><i>•</i><span><a href="https://t.me/shines_light">t.me/shines_light</a></span><br>
+      <span><a href="https://github.com/PrizrakZamkov">github.com/PrizrakZamkov</a></span><i>•</i><span><a href="https://prizrakzamkov.github.io/cv-website/">prizrakzamkov.github.io/cv-website</a></span><i>•</i><span><a href="https://prizrakzamkov.itch.io/">prizrakzamkov.itch.io</a></span>
+      <!-- телефон намеренно убран, файл лежит в открытом доступе на сайте.
+           Для прямых откликов раскомментируйте строку ниже:
+      <i>•</i><span>+7 968 663-63-91</span>
+      -->
+    </p>
+  </header>
+
+  <div class="cols">
+
+    <div class="main">
+
+      <section class="block">
+        <h2>О себе</h2>
+        <p class="lead">Четвёртый курс Университета Иннополис. Делаю игры на Unity: отвечаю за механики и за то, как игра ощущается в руках — отклик на действия игрока, анимации, эффекты. В командах писал код, отвечал за графику и интерфейс, брал на себя координацию. Свои игры довожу до публикации, а не до папки в столе: в них можно поиграть прямо сейчас.</p>
+      </section>
+
+      <section class="block">
+        <h2>Опыт</h2>
+
+        <div class="item">
+          <p class="when">май — август 2026</p>
+          <h3>Геймдизайнер и Unity-разработчик</h3>
+          <p class="where">Центр разработки игр, Университет Иннополис · производственная практика</p>
+          <ul>
+            <li>Участвовал в разработке концепции игровой логики, готовил питч и презентацию проекта</li>
+            <li>Вёл геймдизайн-документацию и концепт-документы в актуальном состоянии</li>
+            <li>Программировал основные механики в Unity в составе команды</li>
+          </ul>
+          <p class="stack">Unity · C# · Git · Google Sheets</p>
+        </div>
+
+        <div class="item">
+          <p class="when">июнь — июль 2025</p>
+          <h3>UX/UI-дизайнер и Unity-разработчик</h3>
+          <p class="where">Университет Иннополис · прикладной проект Sign Game, команда из 7 человек</p>
+          <ul>
+            <li>Отвечал за всю графику, интерфейс и анимации игры</li>
+            <li>Реализовал перемещение персонажа на C#, настроил деревья анимаций и визуальный отклик механик</li>
+            <li>Взял на себя часть координации команды: разбивал работу на задачи и распределял их, чтобы довести проект до сдачи</li>
+          </ul>
+          <p class="stack">Unity · C# · Animator · Particle System · Figma · Trello</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Проекты</h2>
+
+        <p class="proj">
+          <b>Wizard Survivors</b> — survivor-like, где заклинания кастуются рисованием знаков пальцем. Распознавание знаков, управление под тач, сборки под веб и Android. Unity, C#.<br>
+          <span class="url"><a href="https://prizrakzamkov.itch.io/wizard-survivors">prizrakzamkov.itch.io/wizard-survivors</a> · <a href="https://github.com/PrizrakZamkov/PocketSignWizards-public-repo">github.com/PrizrakZamkov/PocketSignWizards-public-repo</a></span>
+        </p>
+        <p class="proj">
+          <b>Платформер с процедурными уровнями</b> — Sign Game, командный проект: волшебник собирает заклинания из нарисованных рун, уровни собираются из комнат. Графика, интерфейс и анимации, перемещение персонажа, часть распределения задач. Unity, C#.<br>
+          <span class="url"><a href="https://github.com/IU-Capstone-Project-2025/SignGame">github.com/IU-Capstone-Project-2025/SignGame</a> · <a href="https://dorley174.itch.io/sign-game">dorley174.itch.io/sign-game</a></span>
+        </p>
+        <p class="proj">
+          <b>Пункт выдачи в апокалипсис</b> — командный проект от идеи и геймдизайн-документа до демо и защиты. Отвечал за геймплей, затем в основном за разработку. Unity, C#.<br>
+          <span class="url"><a href="https://ray326sq.itch.io/pvz-game">ray326sq.itch.io/pvz-game</a></span>
+        </p>
+        <p class="proj">
+          <b>HD2D Kit</b> — набор для Unity 6 URP: пиксельные спрайты в объёмном мире, свет, карты нормалей, постобработка. В комплекте демо-сцена.<br>
+          <span class="url"><a href="https://github.com/PrizrakZamkov/hd2d-kit-replaced-style">github.com/PrizrakZamkov/hd2d-kit-replaced-style</a></span>
+        </p>
+        <p class="proj">
+          <b>Геймджемы</b> — Unemployed Freedom (Pixel Forge Jam #3) и Aim Training (GMTK Game Jam 2026): игры от идеи до опубликованной сборки за выходные, в одиночку.<br>
+          <span class="url"><a href="https://prizrakzamkov.itch.io">prizrakzamkov.itch.io</a></span>
+        </p>
+      </section>
+
+    </div>
+
+    <div class="side">
+
+      <section class="block">
+        <h2>Навыки</h2>
+
+        <p class="skill"><b>Unity</b><span>Unity 6, C#, URP, Shader Graph, Input System, Animator, Particle System, 2D и 3D</span></p>
+        <p class="skill"><b>Платформы</b><span>Android, WebGL</span></p>
+        <p class="skill"><b>Архитектура</b><span>ООП, SOLID, паттерны, code review</span></p>
+        <p class="skill"><b>Инструменты</b><span>Git, GitHub Actions, Blender, Krita</span></p>
+        <p class="skill"><b>Веб</b><span>HTML, CSS, JavaScript, TypeScript, React</span></p>
+        <p class="skill"><b>Знаком</b><span>Zenject, VContainer, UniTask, Addressables, DOTween, HLSL</span></p>
+      </section>
+
+      <section class="block">
+        <h2>Образование</h2>
+        <div class="edu">
+          <b>Университет Иннополис</b>
+          <p>Бакалавриат, инженерия информационных систем</p>
+          <p>сентябрь 2023 — настоящее время</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Языки</h2>
+        <div class="edu">
+          <p style="margin-top:0">Русский — родной</p>
+          <p>Английский — B2</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Ещё</h2>
+        <div class="edu">
+          <p style="margin-top:0">Дипломная работа — инструмент для пиксель-арта, в разработке</p>
+          <p>Регулярно участвую в геймджемах</p>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -5,10 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Станислав Делюков | Unity и фронтенд</title>
   <meta name="description" content="Unity и фронтенд разработчик. Игры, пиксель-арт и интерфейсы.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="preview-square.png">
+
+  <!-- link preview in Telegram and other messengers, needs the full address of the published site -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://prizrakzamkov.github.io/cv-website/">
+  <meta property="og:title" content="Станислав Делюков — Unity и Frontend разработчик">
+  <meta property="og:description" content="Игры на Unity, интерфейсы на React, пиксель-арт. Проекты, опыт и контакты.">
+  <meta property="og:image" content="https://prizrakzamkov.github.io/cv-website/preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Станислав Делюков","alternateName":"Stanislav Delyukov","jobTitle":"Unity and Frontend developer","sameAs":["https://github.com/PrizrakZamkov","https://prizrakzamkov.itch.io/"]}
+  </script>
 </head>
 <body>
   <div class="intro" id="intro" aria-hidden="true">
@@ -23,7 +39,6 @@
 
   <main class="wrap" id="app">
     <header class="hero">
-      <div class="hero-dots" aria-hidden="true"></div>
       <div class="avatar" id="avatar" aria-hidden="true"></div>
       <div class="hero-text">
         <h1 class="name glitch" id="name"></h1>
@@ -51,6 +66,7 @@
 
     <section class="block">
       <h2 class="caption" data-ui="projects"></h2>
+      <p class="note" id="projects-note"></p>
       <div class="projects" id="projects"></div>
     </section>
 
@@ -70,7 +86,23 @@
     <div class="modal-panel" id="modal-panel"></div>
   </dialog>
 
-  <noscript><p class="noscript">Включите JavaScript, чтобы увидеть страницу</p></noscript>
+  <template id="fallback">
+    <p class="noscript">
+      Станислав Делюков, Unity и Frontend разработчик.
+      <a href="https://github.com/PrizrakZamkov">GitHub: github.com/PrizrakZamkov</a>,
+      <a href="https://prizrakzamkov.itch.io/">itch.io</a>,
+      <a href="https://t.me/shines_light">Telegram</a>
+    </p>
+  </template>
+
+  <noscript>
+    <p class="noscript">
+      Включите JavaScript, чтобы увидеть страницу. Станислав Делюков, Unity и Frontend разработчик.
+      <a href="https://github.com/PrizrakZamkov">GitHub: github.com/PrizrakZamkov</a>,
+      <a href="https://prizrakzamkov.itch.io/">itch.io</a>,
+      <a href="https://t.me/shines_light">Telegram</a>
+    </p>
+  </noscript>
 
   <script src="data.js"></script>
   <script src="main.js"></script>

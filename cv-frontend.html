@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Станислав Делюков — резюме, frontend-разработчик</title>
+<!--
+  Резюме на одну страницу.
+  Открыть: двойной клик по этому файлу.
+  Сохранить в PDF: Ctrl+P, принтер «Сохранить как PDF», поля «Нет», фон печатать не нужно.
+  Весь текст правится прямо здесь, ничего больше не требуется.
+-->
+<style>
+  @page { size: A4; margin: 12mm 12mm 10mm; }
+
+  :root {
+    --ink: #14121c;
+    --soft: #5a5570;
+    --rule: #ddd9e8;
+    --accent: #6b3fd4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: #fff;
+    font: 400 10.4pt/1.45 Inter, 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    width: 186mm;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  h1, h2, h3, p { margin: 0; }
+
+  /* шапка */
+  .top { border-bottom: 2px solid var(--accent); padding-bottom: 7pt; margin-bottom: 11pt; }
+
+  .name {
+    font-size: 23pt;
+    font-weight: 700;
+    letter-spacing: -.015em;
+    line-height: 1.05;
+  }
+
+  .role {
+    margin-top: 3pt;
+    font-size: 11.5pt;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .line {
+    margin-top: 5pt;
+    font-size: 9pt;
+    color: var(--soft);
+  }
+
+  .line span { white-space: nowrap; }
+  .line i { font-style: normal; color: var(--rule); padding: 0 5pt; }
+
+  /* две колонки, без flex и grid: так же печатается и в старых движках */
+  .cols { width: 100%; }
+  .cols::after { content: ''; display: block; clear: both; }
+
+  .main { float: left; width: 120mm; }
+  .side { float: right; width: 58mm; }
+
+  h2 {
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 2.5pt;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 6pt;
+  }
+
+  .block { margin-bottom: 13pt; }
+
+  .item { margin-bottom: 10pt; }
+  .item:last-child { margin-bottom: 0; }
+
+  .item-top { }
+
+  .item h3 {
+    font-size: 10.5pt;
+    font-weight: 650;
+    line-height: 1.25;
+  }
+
+  .where {
+    font-size: 9.2pt;
+    color: var(--soft);
+    margin-top: 1.5pt;
+  }
+
+  .when {
+    float: right;
+    font-size: 8.5pt;
+    color: var(--soft);
+    font-weight: 500;
+    padding-left: 6pt;
+  }
+
+  ul { margin: 4pt 0 0; padding: 0; list-style: none; }
+
+  li {
+    position: relative;
+    padding-left: 10pt;
+    margin-bottom: 2pt;
+    font-size: 9.5pt;
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 1pt;
+    top: 5pt;
+    width: 3pt;
+    height: 3pt;
+    background: var(--accent);
+  }
+
+  .stack {
+    margin-top: 3pt;
+    font-size: 8.5pt;
+    color: var(--soft);
+  }
+
+  .lead { font-size: 9.7pt; }
+
+  /* проекты */
+  .proj { margin-bottom: 7.5pt; font-size: 9.5pt; }
+  .proj:last-child { margin-bottom: 0; }
+  .proj b { font-weight: 650; }
+  .proj .url { color: var(--accent); font-size: 8.5pt; }
+
+  /* боковая колонка */
+  .side .block { margin-bottom: 12pt; }
+
+  .skill { margin-bottom: 6pt; font-size: 9pt; }
+  .skill:last-child { margin-bottom: 0; }
+  .skill b { display: block; font-weight: 650; font-size: 8.5pt; }
+  .skill span { color: var(--soft); }
+
+  .edu { font-size: 9pt; }
+  .edu b { font-weight: 650; }
+  .edu p { margin: 1pt 0 0; color: var(--soft); }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header class="top">
+    <h1 class="name">Станислав Делюков</h1>
+    <p class="role">Frontend-разработчик</p>
+    <p class="line">
+      <span>Иннополис, Россия</span><i>•</i><span><a href="mailto:s.delyukov@innopolis.university">s.delyukov@innopolis.university</a></span><i>•</i><span><a href="https://t.me/shines_light">t.me/shines_light</a></span><br>
+      <span><a href="https://github.com/PrizrakZamkov">github.com/PrizrakZamkov</a></span><i>•</i><span><a href="https://prizrakzamkov.github.io/cv-website/">prizrakzamkov.github.io/cv-website</a></span><i>•</i><span><a href="https://prizrakzamkov.itch.io/">prizrakzamkov.itch.io</a></span>
+      <!-- телефон намеренно убран, файл лежит в открытом доступе на сайте.
+           Для прямых откликов раскомментируйте строку ниже:
+      <i>•</i><span>+7 968 663-63-91</span>
+      -->
+    </p>
+  </header>
+
+  <div class="cols">
+
+    <div class="main">
+
+      <section class="block">
+        <h2>О себе</h2>
+        <p class="lead">Четвёртый курс Университета Иннополис. Пишу интерфейсы на TypeScript и React, делаю небольшие веб-инструменты — от вёрстки до сервера. Параллельно разрабатываю игры на Unity, оттуда привычка следить за тем, как интерфейс отзывается на действия человека. Свои проекты довожу до рабочей версии в сети, ссылки ниже открываются.</p>
+      </section>
+
+      <section class="block">
+        <h2>Опыт</h2>
+
+        <div class="item">
+          <p class="when">май — август 2026</p>
+          <h3>Геймдизайнер и Unity-разработчик</h3>
+          <p class="where">Центр разработки игр, Университет Иннополис · производственная практика</p>
+          <ul>
+            <li>Программировал основные механики в Unity в команде, работал в общем репозитории через ветки</li>
+            <li>Участвовал в разработке концепции, готовил питч и презентацию проекта</li>
+          </ul>
+          <p class="stack">Unity · C# · Git</p>
+        </div>
+
+        <div class="item">
+          <p class="when">июнь — июль 2025</p>
+          <h3>UX/UI-дизайнер и Unity-разработчик</h3>
+          <p class="where">Университет Иннополис · прикладной проект на Unity, команда из 7 человек</p>
+          <ul>
+            <li>Отвечал за интерфейс, графику и анимации, писал часть кода</li>
+            <li>Взял на себя часть координации: разбивал работу на задачи и распределял их в команде</li>
+          </ul>
+          <p class="stack">Unity · C# · Figma · Trello</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Проекты</h2>
+
+        <p class="proj">
+          <b>Планировщик недели</b> — недельная сетка с перетаскиванием и растягиванием задач, повторами и многодневными периодами. Автопланирование раскладывает задачи по свободным окнам с учётом дедлайна и приоритета. Отмена действий, управление с клавиатуры, импорт и экспорт, миграции старых сохранений. Тесты на логику расписания, деплой через GitHub Actions. React, TypeScript, Vite, Vitest.<br>
+          <span class="url"><a href="https://prizrakzamkov.github.io/schedule-planner">prizrakzamkov.github.io/schedule-planner</a> · <a href="https://github.com/PrizrakZamkov/schedule-planner">github.com/PrizrakZamkov/schedule-planner</a></span>
+        </p>
+        <p class="proj">
+          <b>Gamefolk</b> — личный дневник людей из игр и историй с ними. Записи и картинки шифруются прямо в браузере и хранятся в IndexedDB, вход по коду доступа, резервные копии файлом, синхронизация через Google. Лента с поиском и фильтрами, шесть языков, светлая и тёмная тема. React, Netlify Functions.<br>
+          <span class="url"><a href="https://gamefolk.netlify.app">gamefolk.netlify.app</a> · <a href="https://github.com/PrizrakZamkov/memory">github.com/PrizrakZamkov/memory</a></span>
+        </p>
+        <p class="proj">
+          <b>Сайт-резюме</b> — сайт-визитка без фреймворков и шаблонов: чистые HTML, CSS и JavaScript. Два языка, анимации на CSS, поддержка prefers-reduced-motion, весь контент в одном файле данных.<br>
+          <span class="url"><a href="https://prizrakzamkov.github.io/cv-website">prizrakzamkov.github.io/cv-website</a> · <a href="https://github.com/PrizrakZamkov/cv-website">github.com/PrizrakZamkov/cv-website</a></span>
+        </p>
+        <p class="proj">
+          <b>Wizard Survivors</b> — браузерная игра на Unity: рисуешь знак пальцем или мышью, игра его распознаёт. Опубликована и играется прямо на странице.<br>
+          <span class="url"><a href="https://prizrakzamkov.itch.io/wizard-survivors">prizrakzamkov.itch.io/wizard-survivors</a></span>
+        </p>
+      </section>
+
+    </div>
+
+    <div class="side">
+
+      <section class="block">
+        <h2>Навыки</h2>
+
+        <p class="skill"><b>Frontend</b><span>HTML, CSS, JavaScript, TypeScript, React</span></p>
+        <p class="skill"><b>Сборка и тесты</b><span>Vite, esbuild, Vitest, GitHub Actions</span></p>
+        <p class="skill"><b>Браузер</b><span>localStorage, IndexedDB, шифрование на клиенте</span></p>
+        <p class="skill"><b>Вёрстка</b><span>адаптивная вёрстка, анимации на CSS, доступность</span></p>
+        <p class="skill"><b>Архитектура</b><span>ООП, SOLID, паттерны, code review</span></p>
+        <p class="skill"><b>Бэкенд</b><span>Node.js, Netlify Functions, Python, PostgreSQL</span></p>
+        <p class="skill"><b>Ещё</b><span>Git, Docker, Unity, C#</span></p>
+      </section>
+
+      <section class="block">
+        <h2>Образование</h2>
+        <div class="edu">
+          <b>Университет Иннополис</b>
+          <p>Бакалавриат, инженерия информационных систем</p>
+          <p>сентябрь 2023 — настоящее время</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Языки</h2>
+        <div class="edu">
+          <p style="margin-top:0">Русский — родной</p>
+          <p>Английский — B2</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Ещё</h2>
+        <div class="edu">
+          <p style="margin-top:0">Дипломная работа — инструмент для пиксель-арта, в разработке</p>
+          <p>Сайт-резюме написан с нуля, без шаблонов и фреймворков</p>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

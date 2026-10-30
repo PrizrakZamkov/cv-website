@@ -41,7 +41,11 @@ function contactButtons(withValues) {
     const value = withValues ? ` <small>${esc(c.value)}</small>` : '';
     return `<a class="btn${c.main ? ' main' : ''}" href="${esc(c.href)}"${external}>${esc(t(c.label))}${value}</a>`;
   });
-  if (cv) buttons.push(`<a class="btn" href="${esc(cv)}" download>${esc(t(UI.cv))}</a>`);
+  // cv is a list of files, or one plain file name
+  const files = Array.isArray(cv) ? cv : cv ? [{ label: UI.cv, href: cv }] : [];
+  files.forEach(file => {
+    buttons.push(`<a class="btn" href="${esc(file.href)}" download>${esc(t(file.label))}</a>`);
+  });
   return buttons.join('');
 }
 
@@ -71,6 +75,7 @@ function renderHero() {
   $('contacts').innerHTML = contactButtons(false);
   $('contacts-bottom').innerHTML = contactButtons(true);
   document.title = `${name} | ${t(p.role)}`;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', t(p.tagline));
 }
 
 function renderAbout() {
@@ -90,13 +95,20 @@ function renderExperience() {
     </li>`).join('');
 }
 
+// big cards first, then small ones; inside each group ready projects go first and the order from data.js is kept
+const STATUS_ORDER = { done: 0, wip: 1 };
+const statusLabel = status => (status === 'done' ? UI.done : status === 'wip' ? UI.wip : null);
+
+const byStatus = (a, b) => (STATUS_ORDER[a.status] ?? 2) - (STATUS_ORDER[b.status] ?? 2);
+
 function renderProjects() {
-  const featured = SITE.projects.filter(p => p.featured);
-  const rest = SITE.projects.filter(p => !p.featured);
+  const featured = SITE.projects.filter(p => p.featured).sort(byStatus);
+  const rest = SITE.projects.filter(p => !p.featured).sort(byStatus);
 
   $('projects').innerHTML = [...featured, ...rest].map(project => {
     const index = SITE.projects.indexOf(project);
-    const badge = project.status === 'wip' ? `<span class="badge">${esc(t(UI.wip))}</span>` : '';
+    const label = statusLabel(project.status);
+    const badge = label ? `<span class="badge ${project.status}">${esc(t(label))}</span>` : '';
     const size = project.featured ? '' : ' small';
     return `
       <button class="card${size}" type="button" data-id="${esc(project.id)}" aria-haspopup="dialog">
@@ -110,6 +122,13 @@ function renderProjects() {
         </span>
       </button>`;
   }).join('');
+}
+
+function renderProjectsNote() {
+  const git = SITE.person.contacts.find(c => c.label === 'GitHub');
+  $('projects-note').innerHTML = git
+    ? `${esc(t(UI.codeNote))} <a href="${esc(git.href)}" target="_blank" rel="noopener">${esc(git.href.replace(/^https?:\/\//, ''))}</a>`
+    : '';
 }
 
 function renderSkills() {
@@ -126,7 +145,6 @@ function renderEducation() {
     <div>
       <h3>${esc(t(e.place))}</h3>
       <p class="muted">${esc(t(e.degree))}, ${esc(t(e.period))}</p>
-      <p class="thesis">${esc(t(e.thesis))}</p>
     </div>
     <div class="edu-side">
       <h3>${esc(t(UI.languages))}</h3>
@@ -154,6 +172,7 @@ function render() {
   renderAbout();
   renderExperience();
   renderProjects();
+  renderProjectsNote();
   renderSkills();
   renderEducation();
 }
@@ -298,7 +317,7 @@ function playIntro(done) {
     }, 1150);
   };
 
-  setTimeout(open, 1750);
+  setTimeout(open, 1200);
   intro.addEventListener('click', open);
   window.addEventListener('keydown', open, { once: true });
 }
@@ -327,10 +346,10 @@ function openProject(id) {
     </div>`;
 
   modal.classList.remove('is-closing');
-  modal.showModal();
   document.body.classList.add('is-locked');
-  modal.querySelector('video')?.play().catch(() => {});
-  setTimeout(() => glitch(modal.querySelector('.modal-title')), 300);
+  modal.showModal();
+  requestAnimationFrame(() => modal.querySelector('video')?.play().catch(() => {}));
+  setTimeout(() => glitch(modal.querySelector('.modal-title')), 440);
 }
 
 function closeProject() {
@@ -375,10 +394,28 @@ $('lang').addEventListener('click', () => {
   render();
 });
 
-render();
-drawAvatar();
-playIntro(() => {
-  setupReveal();
-  startIdle();
-  setTimeout(() => glitch($('name')), 450);
-});
+// a typo in data.js used to leave a black screen behind the intro, now the contacts stay reachable
+function showFallback(error) {
+  console.error(error);
+  const spare = $('fallback');
+  $('app').innerHTML = '';
+  if (spare) $('app').append(spare.content.cloneNode(true));
+  $('intro').hidden = true;
+  document.body.classList.remove('is-locked');
+}
+
+try {
+  render();
+  drawAvatar();
+  playIntro(() => {
+    try {
+      setupReveal();
+      startIdle();
+      setTimeout(() => glitch($('name')), 450);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+} catch (error) {
+  showFallback(error);
+}
