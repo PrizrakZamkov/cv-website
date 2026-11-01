@@ -491,7 +491,6 @@ h1, h2, h3, p { margin: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  image-rendering: pixelated;
 }
 
 .cover:has(img, video)::after { display: none; }
@@ -668,6 +667,9 @@ h1, h2, h3, p { margin: 0; }
 
 .modal .cover { aspect-ratio: 16 / 7; }
 
+/* a real screenshot is shown whole in the project window */
+.modal .cover:has(img, video) { aspect-ratio: 4 / 3; }
+
 .modal-body { padding: 26px 30px 30px; }
 
 .modal-title {
@@ -728,7 +730,7 @@ h1, h2, h3, p { margin: 0; }
 
   .modal-body { padding: 22px 20px 24px; }
 
-  .modal .cover { aspect-ratio: 16 / 9; }
+  .modal .cover:not(:has(img, video)) { aspect-ratio: 16 / 9; }
 }
 
 @media (prefers-reduced-motion: reduce) {

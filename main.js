@@ -59,7 +59,7 @@ function coverFor(project, index) {
   const media = project.video
     ? `<video src="${esc(project.video)}" muted loop playsinline preload="none"></video>`
     : project.image
-      ? `<img src="${esc(project.image)}" alt="" loading="lazy">`
+      ? `<img src="${esc(project.image)}" alt="" loading="lazy" decoding="async"${project.focus ? ` style="object-position: ${esc(project.focus)}"` : ''}>`
       : `<span class="glyph">${esc(glyphFor(project))}</span>`;
   return `<span class="cover" style="--a: ${100 + index * 47}deg">${media}</span>`;
 }

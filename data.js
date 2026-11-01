@@ -83,6 +83,7 @@ const SITE = {
   projects: [
     {
       id: 'planner',
+      image: 'img/planner.jpg',
       featured: true,
       glyph: 'WK',
       title: { ru: 'Планировщик недели', en: 'Week planner' },
@@ -108,6 +109,7 @@ const SITE = {
     },
     {
       id: 'spells',
+      image: 'img/wizard.jpg',
       featured: true,
       glyph: 'WS',
       title: 'Wizard Survivors',
@@ -133,6 +135,7 @@ const SITE = {
     },
     {
       id: 'gamefolk',
+      image: 'img/gamefolk.jpg',
       featured: true,
       glyph: 'GF',
       title: 'Gamefolk',
@@ -158,12 +161,13 @@ const SITE = {
     },
     {
       id: 'platformer',
+      image: 'img/signgame.jpg',
       featured: true,
       glyph: 'PCG',
-      title: { ru: 'Платформер с процедурными уровнями', en: 'Procedural platformer' },
+      title: 'Sign Game',
       short: {
-        ru: 'Игра в духе Hollow Knight, уровни собираются как в The Binding of Isaac',
-        en: 'A Hollow Knight style game with levels built like in The Binding of Isaac'
+        ru: 'Командный платформер: волшебник собирает заклинания из рун, уровни собираются из комнат',
+        en: 'A team platformer: a wizard combines runes into spells, levels are assembled from rooms'
       },
       status: 'done',
       role: { ru: 'UX/UI и разработка, команда из 7 человек', en: 'UX/UI and development, team of 7' },
@@ -207,6 +211,9 @@ const SITE = {
     },
     {
       id: 'jams',
+      image: 'img/jams.jpg',
+      // which part of the picture stays visible on a narrow card
+      focus: '72% 50%',
       glyph: 'JAM',
       title: { ru: 'Геймджемы', en: 'Game jams' },
       short: {
@@ -251,25 +258,28 @@ const SITE = {
       links: [{ label: 'GitHub', href: 'https://github.com/PrizrakZamkov/tooth-app' }]
     },
     {
-      id: 'cvsite',
-      glyph: 'CV',
-      title: { ru: 'Этот сайт', en: 'This site' },
+      id: 'sites',
+      glyph: 'WEB',
+      title: { ru: 'Сайты-визитки', en: 'Portfolio sites' },
       short: {
-        ru: 'Сайт-визитка с нуля: без фреймворков, весь текст в одном файле',
-        en: 'This portfolio site from scratch: no frameworks, all the text in one file'
+        ru: 'Этот сайт и сайт-визитка для бэкенд-разработчика по макету дизайнера',
+        en: 'This site and a portfolio site for a backend developer, built from a designer\'s layout'
       },
       status: 'done',
-      role: { ru: 'Один', en: 'Solo' },
+      role: { ru: 'Разработка', en: 'Development' },
       text: {
-        ru: ['Страница, которую вы сейчас читаете. Написана без фреймворков и шаблонов: чистый HTML, CSS и JavaScript.', 'Весь текст и проекты лежат в одном файле данных, поэтому страницу можно обновить за минуту.'],
-        en: ['The page you are reading. Written without frameworks or templates: plain HTML, CSS and JavaScript.', 'All the text and the projects live in a single data file, so updating the page takes a minute.']
+        ru: ['Этот сайт: без фреймворков и шаблонов, на чистых HTML, CSS и JavaScript. Два языка, анимации на CSS, пиксельный аватар рисуется кодом, весь текст в одном файле данных.', 'Сайт-визитка для бэкенд-разработчика: вёрстка и код по макету дизайнера, два языка, вступительный экран, проекты и контакты.'],
+        en: ['This site: no frameworks or templates, plain HTML, CSS and JavaScript. Two languages, CSS animations, a pixel avatar drawn in code, all the text in one data file.', 'A portfolio site for a backend developer: layout and code from a designer\'s mockup, two languages, an intro screen, projects and contacts.']
       },
       did: {
-        ru: ['Вёрстка и анимации на чистом CSS', 'Переключение русского и английского', 'Пиксельный аватар рисуется кодом'],
-        en: ['Layout and animations in plain CSS', 'Switching between Russian and English', 'The pixel avatar is drawn in code']
+        ru: ['Вёрстка и анимации на чистом CSS', 'Переключение языков без перезагрузки', 'Перенос чужого макета в код один в один'],
+        en: ['Layout and animations in plain CSS', 'Language switching without a reload', 'Turning someone else\'s mockup into code faithfully']
       },
       stack: ['HTML', 'CSS', 'JavaScript'],
-      links: [{ label: 'GitHub', href: 'https://github.com/PrizrakZamkov/cv-website' }]
+      links: [
+        { label: { ru: 'Этот сайт: код', en: 'This site: code' }, href: 'https://github.com/PrizrakZamkov/cv-website' },
+        { label: 'torshinegor.ru', href: 'https://torshinegor.ru/' }
+      ]
     },
     {
       id: 'hd2d',
