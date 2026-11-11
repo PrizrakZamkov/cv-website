@@ -255,7 +255,10 @@ const SITE = {
         en: ['Notification with a check-in', 'Home screen widget', 'Reminder time settings']
       },
       stack: ['Android', 'Kotlin', 'Jetpack Compose'],
-      links: [{ label: 'GitHub', href: 'https://github.com/PrizrakZamkov/tooth-app' }]
+      links: [
+        { label: { ru: 'Скачать APK', en: 'Download APK' }, href: 'https://github.com/PrizrakZamkov/tooth-app/releases/latest' },
+        { label: 'GitHub', href: 'https://github.com/PrizrakZamkov/tooth-app' }
+      ]
     },
     {
       id: 'sites',
