@@ -136,7 +136,6 @@ h1, h2, h3, p { margin: 0; }
   transform: scaleX(0);
   animation:
     line-in .7s cubic-bezier(.2, .7, .2, 1) .05s forwards,
-    line-glitch .5s steps(1) .7s;
 }
 
 .intro.is-open .intro-line { display: none; }
