@@ -20,11 +20,17 @@ const SITE = {
       { label: 'GitHub', value: 'PrizrakZamkov', href: 'https://github.com/PrizrakZamkov' },
       { label: 'itch.io', value: 'prizrakzamkov', href: 'https://prizrakzamkov.itch.io/' }
     ],
-    // two cv files for two kinds of vacancy, both next to index.html
+    // CV downloads by role and language, all next to index.html
     // one file instead of the list also works: cv: 'name.pdf'
     cv: [
-      { label: { ru: 'Резюме: геймдев', en: 'CV: game dev' }, href: 'Delyukov-CV-gamedev.pdf' },
-      { label: { ru: 'Резюме: фронтенд', en: 'CV: frontend' }, href: 'Delyukov-CV-frontend.pdf' }
+      {
+        label: { ru: 'Резюме: геймдев', en: 'CV: game dev' },
+        href: { ru: 'Delyukov-CV-gamedev.pdf', en: 'Delyukov-CV-gamedev-en.pdf' }
+      },
+      {
+        label: { ru: 'Резюме: фронтенд', en: 'CV: frontend' },
+        href: { ru: 'Delyukov-CV-frontend.pdf', en: 'Delyukov-CV-frontend-en.pdf' }
+      }
     ]
   },
 

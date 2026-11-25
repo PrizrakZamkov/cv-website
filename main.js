@@ -44,7 +44,7 @@ function contactButtons(withValues) {
   // cv is a list of files, or one plain file name
   const files = Array.isArray(cv) ? cv : cv ? [{ label: UI.cv, href: cv }] : [];
   files.forEach(file => {
-    buttons.push(`<a class="btn" href="${esc(file.href)}" download>${esc(t(file.label))}</a>`);
+    buttons.push(`<a class="btn" href="${esc(t(file.href))}" download>${esc(t(file.label))}</a>`);
   });
   return buttons.join('');
 }
